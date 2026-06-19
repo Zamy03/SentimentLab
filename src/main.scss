@@ -1,0 +1,12 @@
+@use "./pages/auth-log/auth-log.scss";
+@use "./components/navbar.scss";
+@use "./components/sidebar.scss";
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

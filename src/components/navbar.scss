@@ -1,0 +1,37 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+
+  .page-title { 
+    margin: 0 0 4px 0; 
+    font-size: 1.25rem; 
+    font-weight: 700; 
+    color: var(--text-main);
+  }
+
+  .page-subtitle { 
+    margin: 0; 
+    font-size: 0.85rem; 
+    color: var(--text-secondary); 
+  }
+  
+  .system-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--color-green);
+    background: rgba(0, 209, 112, 0.1);
+    padding: 6px 12px;
+    border-radius: 20px;
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--color-green);
+      border-radius: 50%;
+    }
+  }
+}

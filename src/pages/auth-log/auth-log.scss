@@ -1,0 +1,182 @@
+:root {
+  --bg-dark: #11141e;
+  --bg-card: #1c212b;
+  --text-main: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent-blue: #6c5ff7;
+  --accent-purple: #c362f6;
+  --border-color: #2a313e;
+  --input-bg: #151821;
+}
+
+// Global resets and base styles
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif; // Assuming standard modern sans-serif
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Main page container with the grid background and subtle lighting
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  // Replicating the grid pattern
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+
+  // Replicating the background light accent
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(108, 95, 247, 0.1) 0%, rgba(195, 98, 246, 0.05) 50%, rgba(17, 20, 30, 0) 100%);
+    filter: blur(50px);
+    z-index: 0;
+  }
+}
+
+// The card container for the login form
+.login-card {
+  position: relative;
+  z-index: 1; // Above the background blur
+  background-color: var(--bg-card);
+  width: 400px;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+// Header with the logo and company name
+.login-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  .company-name {
+    color: var(--text-main);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-left: 10px;
+  }
+}
+
+// Title and subtitle text
+.login-title {
+  color: var(--text-main);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.login-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0 0 30px 0;
+  line-height: 1.4;
+}
+
+// Styles for individual input groups (labels and fields)
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+
+  label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: var(--text-main);
+    font-size: 0.95rem;
+    box-sizing: border-box; // Ensure padding is inside width
+
+    &::placeholder {
+      color: #555; // Placeholder text color
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent-blue);
+    }
+  }
+}
+
+// Style for the main action button
+.login-button {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: opacity 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  svg {
+    margin-left: 8px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// Style for the demo mode link
+.demo-link {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Utility message styles (optional, for demo)
+.success-msg {
+  color: #4caf50;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.error-msg {
+  color: #f44336;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}

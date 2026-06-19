@@ -1,0 +1,141 @@
+.sidebar {
+  width: 260px;
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100vh; /* Memastikan tingginya full layar */
+
+  .sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+
+    .brand-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-main);
+    }
+  }
+
+  .btn-new-project {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(90deg, var(--accent-blue), #c362f6);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: opacity 0.2s;
+
+    &:hover { opacity: 0.9; }
+  }
+
+  .sidebar-menu {
+    flex: 1;
+    overflow-y: auto;
+
+    .menu-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .empty-sidebar-text {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        font-style: italic;
+      }
+
+      .project-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.2s;
+
+        &:hover { background-color: rgba(255, 255, 255, 0.05); }
+
+        .item-name {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 0.85rem;
+          color: var(--text-secondary);
+        }
+
+        .badge {
+          font-size: 0.65rem;
+          padding: 2px 8px;
+          border-radius: 12px;
+          border: 1px solid;
+          
+          &-done { border-color: rgba(255,255,255,0.2); color: var(--text-secondary); }
+          &-draft { border-color: rgba(250, 219, 20, 0.3); color: var(--color-yellow); }
+        }
+      }
+    }
+  }
+
+  .sidebar-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    margin-top: 20px;
+
+    .user-profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .avatar {
+        width: 32px;
+        height: 32px;
+        background-color: var(--accent-blue);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: white;
+      }
+
+      .user-info {
+        display: flex;
+        flex-direction: column;
+
+        .user-name { font-size: 0.85rem; font-weight: 600; color: var(--text-main); }
+        .user-email { font-size: 0.75rem; color: var(--text-secondary); }
+      }
+    }
+
+    .btn-logout {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      
+      &:hover svg { stroke: white; }
+    }
+  }
+}
